@@ -58,10 +58,3 @@ The latest Google App Script uses V8 runtime.
 Version 12 of Cheeriogs supports the runtime.
 Please upgrade your script. Then, you can do it.
 
-## Sponsorship
-
-This project is maintained by volunteers.
-If you are using this project where it is important,
-consider one time or regular donations, please.
-
-- [❤️ GitHub Sponsors (@tani)](https://github.com/sponsors/tani)
