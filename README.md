@@ -4,7 +4,6 @@ This project is unofficial update of https://github.com/tani/cheeriogs.
 
 Difference to the project is follows.
 
-- Using webpack with [gas-webpack-plugin](https://github.com/fossamagna/gas-webpack-plugin)
 - Updating [cheerio](https://github.com/cheeriojs/cheerio) to ^1.0.0-rc.12
 - Exporting the function `cheerioLoad` as same as `cheerio.load`
 - Exporting the function `cheerioText` as same as `cheerio.text`
