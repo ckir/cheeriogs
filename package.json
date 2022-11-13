@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tani/cheeriogs.git"
+    "url": "git+https://github.com/ckir/cheeriogs.git"
   },
   "keywords": [
     "google",
@@ -18,11 +18,11 @@
   "author": "TANIGUCHI Masaya",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tani/cheeriogs/issues"
+    "url": "https://github.com/ckir/cheeriogs/issues"
   },
-  "homepage": "https://github.com/tani/cheeriogs#readme",
+  "homepage": "https://github.com/ckir/cheeriogs#readme",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.10"
+    "cheerio": "^1.0.0-rc.12"
   },
   "devDependencies": {
     "@babel/core": "7.20.2",
