@@ -5,33 +5,30 @@ This project is unofficial update of https://github.com/tani/cheeriogs.
 Difference to the project is follows.
 
 - Using webpack with [gas-webpack-plugin](https://github.com/fossamagna/gas-webpack-plugin)
-- Updating [cheerio](https://github.com/cheeriojs/cheerio) to 1.0.0-rc.10
-- Exporting the function `load` as same as `cheerio.load`
+- Updating [cheerio](https://github.com/cheeriojs/cheerio) to ^1.0.0-rc.12
+- Exporting the function `cheerioLoad` as same as `cheerio.load`
+- Exporting the function `cheerioText` as same as `cheerio.text`
 
-Script ID: `1ReeQ6WO8kKNxoaA_O0XEQ589cIrRvEBA9qcWpNqdOP17i47u6N9M5Xh0`
 
 ## Adding the library to your project
+I'm not using this as library due to this warning from Google
 
-Cheerio (cheeriogs) for Google Apps Script is made available as a script library. This is how you add it to your project:
+Warning: A script that uses a library doesn't run as quickly as it would if all the code were contained within a single script project. Although libraries can make development and maintenance more convenient, use them sparingly in projects where speed is critical. Because of this issue, library use should be limited in add-ons.
 
-Select "Resources" > "Libraries..." in the Google Apps Script editor.
-Enter the project key (1ReeQ6WO8kKNxoaA_O0XEQ589cIrRvEBA9qcWpNqdOP17i47u6N9M5Xh0) in the "Find a Library" field, and choose "Select". (If you have copied the library, enter instead the project key of your copy.)
-Select the highest version number, and choose `Cheerio` as the identifier. (Do not turn on Development Mode unless you know what you are doing. The development version may not work.)
-Press Save. You can now use the Cheerio (cheeriogs) library in your code.
+So instead I prefer to add a code file to my project and copy/paste the contents of dist/index.js into that file
 
 ## Usage
 
 ```js
-function getContent_(url) {
-    return UrlFetchApp.fetch(url).getContentText()
-}
+let $ = cheerioLoad('This is <em>content</em>.');
+let title = cheerioText($('body'));
 ```
 
-### Returns the content of Wikipedia's Main Page
+### Returns This is content.
 
 ```js
   const content = getContent_('https://en.wikipedia.org');
-  const $ = Cheerio.load(content);
+  const $ = cheerioLoad(content);
   Logger.log($('#mp-right').text());
 ```
 
@@ -39,7 +36,7 @@ function getContent_(url) {
 
 ```js
   const content = getContent_('https://en.wikipedia.org');
-  const $ = Cheerio.load(content);
+  const $ = cheerioLoad(content);
   Logger.log($('p').first().text());
 ```
 
@@ -47,7 +44,7 @@ function getContent_(url) {
 
 ```js
   const html = HtmlService.createHtmlOutputFromFile("index").getContent();
-  const $ = Cheerio.load(html);
+  const $ = cheerioLoad(html);
   $("#main").append("<p>Cheeriosse!!1</p>");
   return HtmlService.createHtmlOutput(
     Utilities.formatString("<html>%s</html>", $('html').html())
