@@ -1,6 +1,6 @@
 # cheerio for Google Apps Script
 
-This project is unofficial update of https://github.com/3846masa/cheerio-gasify.
+This project is unofficial update of https://github.com/tani/cheeriogs.
 
 Difference to the project is follows.
 
